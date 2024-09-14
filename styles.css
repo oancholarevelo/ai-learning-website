@@ -1,0 +1,618 @@
+/* Optimized Font Loading */
+@font-face {
+    font-family: 'FiraMono';
+    src: url(Fonts/FiraMono-Regular.ttf) format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'FiraMono';
+    src: url(Fonts/FiraMono-Bold.ttf) format('truetype');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'FiraMono';
+    src: url(Fonts/FiraMono-Medium.ttf) format('truetype');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Outfit;
+    src: url(Fonts/Outfit-VariableFont_wght.ttf);
+}
+
+/* Typography */
+:root {
+    --font-main: 'Outfit', sans-serif;
+    --font-mono: 'FiraMono', monospace;
+    --color-primary: #393646;
+    --color-secondary: #F4EEE0;
+    --font-size-h1: 72px;
+    --font-size-h2: 56px;
+    --font-size-h3: 32px;
+    --font-size-p: 18px;
+    --font-size-button: 20px;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 600;
+    --section-spacing: 80px;
+    --element-spacing: 20px;
+}
+
+/* Dark Mode Styles with Reduced Redundancy */
+.dark-mode {
+    --color-primary: #F4EEE0;
+    --color-secondary: #393646;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.dark-mode header,
+.dark-mode a,
+.dark-mode .button {
+    color: var(--color-primary);
+}
+
+.dark-mode .button-dark {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+/* Main Content Wrapper */
+.main-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Body */
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-secondary);
+    margin: 0;
+    padding: 0 20px;
+    overflow-x: hidden;
+}
+
+/* Navbar Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 80px;
+    background-color: var(--color-secondary);
+    margin-bottom: var(--section-spacing); /* Consistent spacing below header */
+}
+
+header .logo a {
+    font-weight: var(--font-weight-bold);
+    text-decoration: none;
+    color: var(--color-primary);
+    font-size: xx-large;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    font-family: 'FiraMonoRegular', monospace;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: medium;
+    font-size: larger;
+}
+
+header .buttons {
+    display: flex;
+    gap: 8px;
+}
+
+/* Button styles, updated to react to dark mode */
+.button {
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 8px 24px;
+    background: none;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: var(--font-size-button);
+    color: var(--color-primary);
+    font-family: var(--font-main);
+}
+
+.button-dark {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+/* Button Hover States */
+.button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.button-outline:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+}
+
+.button-dark:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+/* Media Queries for Responsive Spacing */
+@media (max-width: 768px) {
+    :root {
+        --section-spacing: 40px;
+        --element-spacing: 10px;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    margin-bottom: var(--section-spacing);
+}
+
+.hero-section h1 {
+    font-size: var(--font-size-h1);
+    color: var(--color-primary);
+    margin-bottom: var(--element-spacing);
+    line-height: 100%;
+}
+
+.hero-section p {
+    font-size: var(--font-size-p);
+    color: var(--color-primary);
+    margin: 0 auto var(--element-spacing);
+    font-family: var(--font-mono);
+}
+
+.hero-section img {
+    margin-top: var(--element-spacing);
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Features Section */
+.section-header {
+    display: flex;
+    margin-bottom: var(--element-spacing);
+}
+
+.second-section {
+    margin-bottom: var(--section-spacing); /* Consistent spacing between sections */
+}
+
+.second-section .empower {
+    font-family: var(--font-main);
+    font-weight: var(--font-weight-bold);
+    font-size: x-large;
+    color: var(--color-primary);
+    width: 40ch;
+}
+
+.second-section h2 {
+    font-size: var(--font-size-h2);
+    color: var(--color-primary);
+    margin-bottom: var(--element-spacing);
+    line-height: 100%;
+    margin-top: -8px;
+}
+
+.second-section p {
+    font-size: var(--font-size-p);
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    width: 80ch;
+    margin-bottom: var(--element-spacing);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
+
+.card {
+    overflow: hidden;
+    flex: 1;
+    margin-bottom: 24px;
+}
+
+.card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-content h3 {
+    color: var(--color-primary);
+    font-size: var(--font-size-h3);
+    margin-bottom: var(--element-spacing);
+    line-height: 100%;
+    margin-top: 16px;
+    width: 20ch;
+}
+
+.card-content p {
+    font-size: var(--font-size-p);
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    width: 25ch;
+}
+
+.feature-section {
+    margin-bottom: var(--section-spacing); /* Consistent spacing between sections */
+}
+
+/* Feature Buttons */
+.feature-buttons {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.button-outline {
+    border: 2px solid var(--color-primary);
+    background: none;
+    color: var(--color-primary);
+    padding: 8px 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: var(--font-size-button);
+    font-weight: 500;
+    font-family: var(--font-main);
+}
+
+.button-signup {
+    color: var(--color-primary);
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--font-size-button);
+    font-weight: 500;
+    font-family: var(--font-main);
+}
+
+/* Personalized Learning Section */
+.benefit {
+    display: flex;
+    margin-bottom: var(--section-spacing);
+    background-color: var(--color-secondary);
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.benefit h2 {
+    font-size: var(--font-size-h2);
+    color: var(--color-primary);
+    font-family: var(--font-main);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--element-spacing);
+    line-height: 100%;
+}
+
+.benefit p {
+    font-size: var(--font-size-p);
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    line-height: 100%;
+    width: 100%;
+}
+
+.benefit .image img {
+    max-width: 640px;
+    border-radius: 8px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    margin-bottom: var(--section-spacing);
+    background-color: var(--color-secondary);
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.stats-content h2 {
+    font-size: var(--font-size-h2);
+    color: var(--color-primary);
+    font-family: var(--font-main);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--element-spacing);
+    line-height: 100%;
+}
+
+.stats-content p {
+    font-size: var(--font-size-p);
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    line-height: 100%;
+    margin-bottom: var(--element-spacing);
+}
+
+.stat-numbers {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.stat-item {
+    text-align: left;
+}
+
+.stat-item strong {
+    font-size: 64px;
+    font-weight: 600;
+    color: var(--color-primary);
+    font-family: var(--font-main);
+    display: block;
+    line-height: 100%;
+}
+
+.stat-item p {
+    font-size: var(--font-size-p);
+    font-family: var(--font-mono);
+    color: var(--color-primary);
+    margin-top: 12px;
+    line-height: 100%;
+}
+
+.stats-image {
+    max-width: 640px;
+    border-radius: 8px;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Testimonials Section */
+
+.feedback-section {
+    margin-bottom: var(--section-spacing);
+}
+
+.feedback-section h2 {
+    font-size: var(--font-size-h2);
+    color: var(--color-primary);
+    margin-bottom: 0;
+}
+
+.feedback-section p {
+    font-size: var(--font-size-p);
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    margin-bottom: var(--element-spacing);
+    margin-top: 0;
+}
+
+.feedback-cards {
+    display: flex;
+    justify-content: space-between; /* Align left */
+    margin-top: var(--element-spacing);
+    margin-bottom: var(--section-spacing);
+}
+
+.feedback-card {
+    background-color: var(--color-secondary);
+    padding: 20px 0;
+    border-radius: 8px;
+}
+
+
+.stars {
+    font-size: 24px;
+    color: #FBB034; /* Star color */
+    margin-bottom: 12px;
+}
+
+.feedback-card p {
+    font-size: var(--font-size-p);
+    color: var(--color-primary);
+    margin-bottom: var(--element-spacing);
+    font-family: var(--font-main);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-button);
+}
+
+.feedback-details {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.feedback-details .name {
+    font-family: var(--font-mono);
+    font-weight: 100;
+    margin-top: 12px;
+}
+
+.feedback-details .separator {
+    border-left: 1px solid var(--color-primary); /* Vertical line */
+    height: 48px;
+    margin-left: var(--element-spacing); /* Spacing between name and line */
+    padding-left: var(--element-spacing); /* Space between line and webflow logo */
+    display: flex;
+    align-items: center;
+    fill: var(--color-primary);
+}
+
+.feedback-details img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.feedback-details div {
+    text-align: left;
+}
+
+.feedback-details p {
+    font-size: 14px;
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+}
+
+.feedback-details svg, 
+.feedback-details .webflow-logo {
+    display: flex;
+    align-items: center; /* Vertically centers the SVG and logo */
+    fill: var(--color-primary);
+}
+
+.webflow-text {
+    font-size: var(--font-size-button);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    margin-left: 8px;
+}
+
+.cta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--section-spacing);
+}
+
+.cta h2 {
+    font-size: var(--font-size-h2);
+    color: var(--color-primary);
+    margin-top: 0;
+    line-height: 100%;
+}
+
+.cta p {
+    font-size: var(--font-size-p);
+    color: var(--color-primary);
+    font-family: var(--font-mono);
+    width: 60ch;
+    text-align: left; /* Ensure text is aligned left */
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the left */
+    gap: 16px;
+}
+
+
+.stars {
+    display: flex;
+    gap: 5px; /* Adjust spacing between stars */
+    margin-bottom: 12px;
+    fill: var(--color-primary);
+}
+
+footer {
+    background-color: var(--color-secondary);
+    font-family: var(--font-main);
+    color: var(--color-primary);
+    margin-bottom: var(--element-spacing);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid var(--color-primary);
+    padding: 56px;
+    border-radius: 8px;
+}
+
+.footer-left h3 {
+    font-size: var(--font-size-h3);
+    font-family: var(--font-main);
+    margin-bottom: 32px;
+    margin-top: 0;
+}
+
+.footer-left .address, .contact {
+    margin-bottom: 32px;
+}
+
+.footer-left p {
+    font-family: var(--font-mono);
+    margin: 8px 0;
+}
+
+.footer-icons {
+    margin-top: var(--element-spacing);
+}
+
+.footer-icons a svg {
+    width: 32px;
+    height: 32px;
+    fill: var(--color-primary);
+    margin-right: 8px;
+    transition: fill 0.3s ease;
+}
+
+.footer-right {
+    display: flex;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    font-family: var(--font-mono);
+}
+
+.footer-links ul li {
+    margin-bottom: var(--element-spacing);
+}
+
+.footer-links ul li a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: var(--font-size-p);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    font-family: var(--font-mono);
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom-links a {
+    margin-left: 20px;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-bottom-links a:hover {
+    text-decoration: underline;
+}
+
+/* Centralized SVG and Icon Styles */
+svg, .icon {
+    fill: var(--color-primary);
+    transition: fill 0.3s ease;
+}
+
+svg:hover, .icon:hover {
+    fill: var(--color-secondary);
+}
